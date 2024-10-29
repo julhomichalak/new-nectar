@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Redirecionar URLs amigáveis para arquivos PHP correspondentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)$ $1.php [L,QSA]
+
+
+ErrorDocument 404 /error.html
